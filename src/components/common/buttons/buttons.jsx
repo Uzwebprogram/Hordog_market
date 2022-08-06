@@ -1,9 +1,9 @@
 import {Buttons} from "./styled-button"
 import StrelkaLeft from "./../../../assets/images/header/icon-strelka-left.svg"
-const Button = ({type, onChange , bg, title ,imgSrc ,pd}) =>{
+const Button = ({type, onClick , bg, title ,imgSrc ,pd , border , marginBottom }) =>{
     return(
         <>
-        <Buttons type={type} onChange={onChange} style={{background : bg , padding: pd}}>{title} 
+        <Buttons type={type} onClick={onClick} style={{background : bg , padding: pd , border: border , marginBottom :marginBottom }}>{title} 
         {imgSrc&&(
         <img src={StrelkaLeft} width={8} height={14}  alt={StrelkaLeft}/>
         )}

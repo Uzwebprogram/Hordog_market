@@ -5,6 +5,7 @@ export const Wrapper =styled.div`
     z-index: 10000;
     margin: 0 auto;
     background-color: #FED700;
+
 `
 export const WrapperContainer = styled.div`
     width: 82%;

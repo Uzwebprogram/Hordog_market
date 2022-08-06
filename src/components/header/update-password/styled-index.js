@@ -26,17 +26,25 @@ export const WrapperTop = styled.div`
         margin-bottom: 24px;
     }
 `
-export const UpdatePass = styled.span`
-        font-family: 'Nunito';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        color: #7B8E98;
-        text-align: right;
-        margin-bottom: 24px;
-        cursor: pointer;
-
+export const UpdatePass = styled.h5`
+margin: 0;
+padding: 0;
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+color: #7B8E98;
+margin-bottom: 24px;
+`
+export const UpdatePassAbout = styled.span`
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+color: #7B8E98;
+margin-bottom: 24px;
 `
 export const Buttons = styled.div`
         margin: 0;
@@ -85,7 +93,7 @@ export const Buttons = styled.div`
         padding-bottom: 14px;
         display: flex;
         align-items: center;
-        padding-left: 93px;
+        padding-left: 116px;
     }
     h4{
         margin: 0;
@@ -101,6 +109,6 @@ export const Buttons = styled.div`
         padding-bottom: 14px;
         display: flex;
         align-items: center;
-        padding-left: 116px;
+        padding-left: 93px;
     }
 `

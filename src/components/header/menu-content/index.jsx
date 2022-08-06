@@ -8,7 +8,7 @@ import ConntentMenu5 from "./../../../assets/images/header/content-menu5.svg"
 import iconStrelkaRight from "./../../../assets/images/header/icon-strelka-left.svg"
 import AdminIcon from "./../../../assets/images/header/admin-icon.svg"
 
-const MenuContent = ({MenuClickFixed}) =>{
+const MenuContent = ({MenuClickFixed , onClick}) =>{
     const MenuClose = () =>{
         MenuClickFixed.current.style.left= "900px"
     }
@@ -23,7 +23,7 @@ const MenuContent = ({MenuClickFixed}) =>{
         <Wrapper>
             <WrapperTop>
             <img onClick={MenuClose} src={CloseHamburger} width={24} height={24} alt={CloseHamburger} />
-            <span>Войти</span>
+            <span onClick={onClick}>Войти</span>
             </WrapperTop>
             <WrapperContent>
                 {dataMenu.map((elem) =><>
