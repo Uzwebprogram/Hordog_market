@@ -1,7 +1,7 @@
 import { Wrapper , WrapperTop  ,UpdatePass ,Buttons} from "./styled-index"
 import Input from "../../common/inputs"
 import Button from "../../common/buttons/buttons"
-import { signWithGooglePopup , createUserDocumentFromtAuth , createAuthUserWithEmailAndPassword } from "../../../utils/firebase/firebase.utils"
+import {createUserDocumentFromtAuth , createAuthUserWithEmailAndPassword } from "../../../utils/firebase/firebase.utils"
 import { useState } from "react"
 const defaultFormFields = {
     displayName : "",
@@ -16,10 +16,7 @@ const SingUp = ({handleClose , onClick}) =>{
     const resetFormFields = () =>{
         setFormFields(defaultFormFields);
     }
-    const logGoogleUser = async () =>{
-        const {user} = await signWithGooglePopup();
-        const userDocRef = await createUserDocumentFromtAuth(user)
-    }
+
     console.log(formFields);
     const HandleSubmit = async (event) =>{
         event.preventDefault();
@@ -64,7 +61,6 @@ const SingUp = ({handleClose , onClick}) =>{
             <UpdatePass>Регистрируясь на сайте, вы соглашаетесь с нашими Правилами и Политикой конфиденциальности и соглашаетесь на информационную рассылку.</UpdatePass>
             <Button border="1px solid #CFD8DC" bg="#FED700" type="submit" marginBottom="8px" title={<h4>Регистрация</h4>}/>
             <Button border="1px solid #CFD8DC" marginBottom="8px" onClick={onClick} title={<h5>Войти</h5>}/>
-            <Button border="1px solid #CFD8DC" marginBottom="8px" onClick={logGoogleUser} title={<p>Google</p>}/>
             </Buttons>
         </Wrapper>
     )

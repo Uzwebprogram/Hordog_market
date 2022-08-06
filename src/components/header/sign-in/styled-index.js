@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import GoogleIcons from "./../../../assets/images/home/google-icons.svg"
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
     padding: 16px;
 `
 export const WrapperTop = styled.div`
@@ -10,7 +10,7 @@ export const WrapperTop = styled.div`
         align-self: flex-end;
         font-size: 28px;
         font-weight: bold;
-        cursor: pointer;
+        cursor: pointer ;
 }
     h2{
         margin: 0;
@@ -36,7 +36,6 @@ export const UpdatePass = styled.span`
         text-align: right;
         margin-bottom: 24px;
         cursor: pointer;
-
 `
 export const Buttons = styled.div`
         margin: 0;
@@ -103,4 +102,10 @@ export const Buttons = styled.div`
         align-items: center;
         padding-left: 116px;
     }
+`
+export const ErrorIcon = styled.img`
+position: absolute;
+right: 25px;
+bottom: 265px;
+cursor: pointer;
 `
