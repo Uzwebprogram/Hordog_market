@@ -33,6 +33,12 @@ export const WrapperContent = styled.ul`
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #1A1A1A;
     }
     li div span {
         font-family: 'Nunito';

@@ -14,7 +14,7 @@ export const WrapperContainer = styled.div`
     display: flex;
     justify-content: space-between;
     ul{
-        width: 140px;
+        width: 197px;
         display: flex;
         justify-content: space-between;
         list-style-type: none;       
@@ -22,6 +22,9 @@ export const WrapperContainer = styled.div`
     }
     ul li{
         cursor: pointer;
+   .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
+    background-color: red !important;
+  }
     }
     @media only screen and (max-width: 768px) {
      width: 90%;
@@ -106,3 +109,18 @@ export const MenuMedia = styled.div`
             transition: 1s ;
 }
 `
+  export const LanWrapper = styled.div`
+    position: relative;
+  svg {
+    position: absolute;
+    top: 12px;
+    color: #fff;
+    z-index: 10;
+  }
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border-width: 0 !important;
+  }
+  .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+    width: 70px;
+  }
+  `

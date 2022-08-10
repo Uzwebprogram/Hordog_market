@@ -1,15 +1,17 @@
-import { Wrapper , WrapperTop  ,UpdatePass ,Buttons , ErrorIcon , Inputs} from "./styled-index"
+import { useRef, useState , useContext } from "react"
+import { signWithGooglePopup , createUserDocumentFromtAuth, signInCreateAuthUserWithEmailAndPassword } from "../../../utils/firebase/firebase.utils"
 import Input from "../../common/inputs"
 import Button from "../../common/buttons/buttons"
 import IconsEye from "./../../../assets/images/header/icons-eye.png"
 import IconsEyeIcons from "./../../../assets/images/header/icons-eye-close.png"
-import { useRef, useState } from "react"
-import { signWithGooglePopup , createUserDocumentFromtAuth, signInCreateAuthUserWithEmailAndPassword } from "../../../utils/firebase/firebase.utils"
+import { Wrapper , WrapperTop  ,UpdatePass ,Buttons , ErrorIcon , Inputs} from "./styled-index"
+import { UserContext } from "../../../contexts/user.context"
 const defaultFormFields = {
     email :"",
     password :"",
 }
 const SingIn = ({handleClose , onClick , onClick2}) =>{
+    const {setCurrentUser} = useContext(UserContext)
     const logGoogleUser = async () =>{
         const {user} = await signWithGooglePopup();
         const userDocRef = await createUserDocumentFromtAuth(user)
@@ -27,10 +29,11 @@ const SingIn = ({handleClose , onClick , onClick2}) =>{
     const HandleSubmit = async (event) =>{
         event.preventDefault();
         try{
-            const response = await signInCreateAuthUserWithEmailAndPassword(email, password)
-            console.log(response);
-            resetFormFields();
-            setErrorText(false)
+            const {user} = await signInCreateAuthUserWithEmailAndPassword(email, password)
+            setCurrentUser(user);
+            resetFormFields();  
+            setErrorText(false);
+            
             PasswordError.current.style.border = "1px solid #CFD8DC"
             PasswordError.current.style.background = "white"
         }catch(error){

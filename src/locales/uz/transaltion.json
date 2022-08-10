@@ -1,0 +1,28 @@
+{
+    "Header":{
+        "0":"Qidirish"
+    } ,
+    "Header-media-menu":{
+        "0": "Katalog",
+        "1": "Sevimlilar",
+        "2": "Aksiya",
+        "3": "Yangiliklar",
+        "4": "Sharhlar",
+        "5": "To'lov va yetkazib berish",
+        "6": "Ko'pincha so'raladi",
+        "7": "Qayta aloqa",
+        "8": "Kontaktlar",
+        "9": "Savollaringiz bormi?",
+        "10": "Bizning qo'llab-quvvatlash jamoamiz bilan bog'laning",
+        "11": "Oldinga",
+        "12": "Kirish",
+        "13": "Chiqish"
+    },    
+    "Media-Footer":{
+        "0":"uy",
+        "1":"Katalog",
+        "2":"Savat",
+        "3":"Sevimlilar",
+        "4":"Shaxsiy Bo'lim"
+    }
+}

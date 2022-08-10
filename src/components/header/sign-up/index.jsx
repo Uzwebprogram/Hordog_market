@@ -2,7 +2,8 @@ import { Wrapper , WrapperTop  ,UpdatePass ,Buttons} from "./styled-index"
 import Input from "../../common/inputs"
 import Button from "../../common/buttons/buttons"
 import {createUserDocumentFromtAuth , createAuthUserWithEmailAndPassword } from "../../../utils/firebase/firebase.utils"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { UserContext } from "../../../contexts/user.context"
 const defaultFormFields = {
     displayName : "",
     email :"",
@@ -10,6 +11,7 @@ const defaultFormFields = {
     confirmPassword : ""
 }
 const SingUp = ({handleClose , onClick}) =>{
+    const {setCurrentUser} = useContext(UserContext)
     const [formFields , setFormFields] = useState(defaultFormFields);
     const {displayName , email , password, confirmPassword} = formFields;
     const [ErrorText , setErrorText] = useState(false)
@@ -26,6 +28,7 @@ const SingUp = ({handleClose , onClick}) =>{
         }
         try{
             const {user} = await createAuthUserWithEmailAndPassword(email, password);
+            setCurrentUser(user)
             await createUserDocumentFromtAuth(user ,{displayName})
             resetFormFields();
             setErrorText(false)

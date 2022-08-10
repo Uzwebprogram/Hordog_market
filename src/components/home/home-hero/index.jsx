@@ -5,7 +5,9 @@ import CloudImgSmall from "./../../../assets/images/home/cloud-small.svg"
 import CloudImgSend from "./../../../assets/images/home/cloud-send.png"
 import ImageDog from "./../../../assets/images/home/image-dog.png"
 import MovingComponent from 'react-moving-text'
+import { useTranslation } from 'react-i18next';
 const HomeHero = () =>{
+  const { t, i18n } = useTranslation();
     return(
         <Wrapper>
         <WrapperContainer>
@@ -19,7 +21,7 @@ const HomeHero = () =>{
                 timing="ease"
                 iteration="1"
                 fillMode="none">
-                <h1>Крафтовые лакомства для собак</h1>
+                <h1>{t("Home-Hero.0")}</h1>
                 </MovingComponent>
 
                     <MovingComponent
@@ -30,9 +32,9 @@ const HomeHero = () =>{
                 timing="ease"
                 iteration="1"
                 fillMode="none">
-                         <p>Всегда свежие лакомства ручной работы с доставкой по России и Миру</p>
+                         <p>{t("Home-Hero.1")}</p>
                 </MovingComponent>
-                    <Button title="Каталог" imgSrc={true} bg={"white"} pd={"16px 28px"}/>
+                    <Button title={t("Home-Hero.2")} imgSrc={true} bg={"white"} pd={"16px 28px"}/>
                 </WrapperHeroLeft>
                 <WrapperHeroRight>
                    <img src={CloudImgSend} width={107} height={59} alt={CloudImgSend} />
@@ -41,7 +43,6 @@ const HomeHero = () =>{
                     <ImageDogs src={ImageDog}  alt="" />
                     <br />
                     <BottomCloud src={CloudImgSmall} width={174} height={59} alt={CloudImgSmall} />
-
                 </WrapperHeroRight>
             </WrapperHero>
         </WrapperContainer>

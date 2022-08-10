@@ -3,11 +3,10 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-const ModalCommon = ({open ,handleClose ,children ,style}) =>{
-
-
+const ModalCommon = ({open ,handleClose ,children ,style , none}) =>{
     return(
       <Modal
+        style={{display : none}}
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={open}
@@ -18,7 +17,7 @@ const ModalCommon = ({open ,handleClose ,children ,style}) =>{
           timeout: 500,
         }}
       >
-        <Fade in={open}>
+        <Fade  in={open}>
           <Box sx={style}>
             {children}
           </Box>

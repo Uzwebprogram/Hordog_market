@@ -1,0 +1,28 @@
+{
+    "Header":{
+        "0":"Search"
+    },
+    "Header-media-menu":{
+        "0": "Catalog",
+        "1": "Favorites",
+        "2": "Stock",
+        "3": "News",
+        "4": "Reviews",
+        "5": "Payment and delivery",
+        "6": "Often asked",
+        "7": "Feedback",
+        "8": "Contacts",
+        "9": "Do you have any questions?",
+        "10": "Contact our support team",
+        "11": "Forward",
+        "12": "Sign up",
+        "13": "Sing out"
+    },
+    "Media-Footer":{
+        "0":"Home",
+        "1":"Catalog",
+        "2":"basket",
+        "3":"favorites",
+        "4":"Profile"
+    }
+}
