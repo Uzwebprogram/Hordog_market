@@ -4,6 +4,8 @@ import Button from "../../common/buttons/buttons"
 import {createUserDocumentFromtAuth , createAuthUserWithEmailAndPassword } from "../../../utils/firebase/firebase.utils"
 import { useContext, useState } from "react"
 import { UserContext } from "../../../contexts/user.context"
+import { useTranslation } from 'react-i18next';
+
 const defaultFormFields = {
     displayName : "",
     email :"",
@@ -11,7 +13,9 @@ const defaultFormFields = {
     confirmPassword : ""
 }
 const SingUp = ({handleClose , onClick}) =>{
-    const {setCurrentUser} = useContext(UserContext)
+  const { t, i18n } = useTranslation();
+
+   
     const [formFields , setFormFields] = useState(defaultFormFields);
     const {displayName , email , password, confirmPassword} = formFields;
     const [ErrorText , setErrorText] = useState(false)
@@ -28,7 +32,6 @@ const SingUp = ({handleClose , onClick}) =>{
         }
         try{
             const {user} = await createAuthUserWithEmailAndPassword(email, password);
-            setCurrentUser(user)
             await createUserDocumentFromtAuth(user ,{displayName})
             resetFormFields();
             setErrorText(false)
@@ -48,22 +51,22 @@ const SingUp = ({handleClose , onClick}) =>{
         <Wrapper onSubmit={HandleSubmit}>
             <WrapperTop>
                 <span onClick={handleClose}>&times;</span>
-                <h2>Регистрация</h2>
-                <Input onChange={HandleChange} placeholder="Показать имя" name="displayName" value={displayName}  type="text" marginBottom="8px"/>
-                <Input onChange={HandleChange} placeholder="Email" name="email" type="email" value={email} marginBottom="8px"/>
-                <Input onChange={HandleChange} placeholder="Пароль" name="password" type="password" value={password} marginBottom="10px"/>
-                <Input onChange={HandleChange} placeholder="Подтвердить Пароль" name="confirmPassword" value={confirmPassword} type="password" marginBottom="10px"/>
+                <h2>{t("Sign-up.6")}</h2>
+                <Input onChange={HandleChange} placeholder={t("Sign-up.7")} name="displayName" value={displayName}  type="text" marginBottom="8px"/>
+                <Input onChange={HandleChange} placeholder={t("Sign-up.2")} name="email" type="email" value={email} marginBottom="8px"/>
+                <Input onChange={HandleChange} placeholder={t("Sign-up.3")} name="password" type="password" value={password} marginBottom="10px"/>
+                <Input onChange={HandleChange} placeholder={t("Sign-up.10")}  name="confirmPassword" value={confirmPassword} type="password" marginBottom="10px"/>
             </WrapperTop>
             <Buttons>
             {ErrorText == false&&
-            <h6 style={{display : "none"}}>Невозможно создать пользователя, электронная почта уже используется</h6>
+            <h6 style={{display : "none"}}>{t("Sign-up.17")}</h6>
             }
             {ErrorText == true&&
-            <h6 style={{display : "block"}}>Невозможно создать пользователя, электронная почта уже используется</h6>
+            <h6 style={{display : "block"}}>{t("Sign-up.17")}</h6>
             }
-            <UpdatePass>Регистрируясь на сайте, вы соглашаетесь с нашими Правилами и Политикой конфиденциальности и соглашаетесь на информационную рассылку.</UpdatePass>
-            <Button border="1px solid #CFD8DC" bg="#FED700" type="submit" marginBottom="8px" title={<h4>Регистрация</h4>}/>
-            <Button border="1px solid #CFD8DC" marginBottom="8px" onClick={onClick} title={<h5>Войти</h5>}/>
+            <UpdatePass>{t("Sign-up.9")}</UpdatePass>
+            <Button border="1px solid #CFD8DC" bg="#FED700"  pd=" 14px 0px"  type="submit" marginBottom="8px" title={t("Sign-up.5")}/>
+            <Button border="1px solid #CFD8DC" pd=" 14px 0px" marginBottom="8px" onClick={onClick} title={t("Sign-up.4")}/>
             </Buttons>
         </Wrapper>
     )

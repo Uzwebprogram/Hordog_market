@@ -1,0 +1,107 @@
+[
+    {
+        "id" : 1,
+        "CatalogNameRu" : "Наборы",
+        "CatalogNameUz" : "To'plamlar",
+        "CatalogNameEn" : "Collections",
+        "CatalogIcon" : "   https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/catalog1.svg?alt=media&token=67e9e9c4-8894-44f5-9437-a07644762f45",
+        "CatalogProducts":[
+            {
+                "id":1,
+                "ProductsName":"Бублик из бычьего корня",
+                "ProductPrice":495,
+                "ProductGram":100
+            }
+        ]
+    },
+    {
+        "id" : 2,
+        "CatalogNameRu" : "Лакомства",
+        "CatalogNameUz" : "Shirinliklar",
+        "CatalogNameEn" : "Goodies",
+            "CatalogIcon" : "   https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/catalog1.svg?alt=media&token=67e9e9c4-8894-44f5-9437-a07644762f45",
+        "CatalogProducts":[
+            {
+                "id":1,
+                "ProductsName":"Бублик из бычьего корня",
+                "ProductPrice":495,
+                "ProductGram":100
+            }
+        ]
+    },
+    {
+        "id" : 3,
+        "CatalogNameRu" : "Аксессуары",
+        "CatalogNameUz" : "Aksessuarlar",
+        "CatalogNameEn" : "Accessorys",
+         "CatalogIcon" : "   https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/catalog1.svg?alt=media&token=67e9e9c4-8894-44f5-9437-a07644762f45",
+        "CatalogProducts":[
+            {
+                "id":1,
+                "ProductsName":"Лопаточный хрящ говяжий для собак",
+                "ProductPrice":495,
+                "ProductGram":100
+            }
+        ]
+    },
+    {
+        "id" : 4,
+        "CatalogNameRu" : "Рога",
+        "CatalogNameUz" : "Shox",
+        "CatalogNameEn" : "Horn",
+               "CatalogIcon" : "   https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/catalog1.svg?alt=media&token=67e9e9c4-8894-44f5-9437-a07644762f45",
+        "CatalogProducts":[
+            {
+                "id":1,
+                "ProductsName":"Бублик из бычьего корня",
+                "ProductPrice":495,
+                "ProductGram":100
+            }
+        ]
+    },
+    {
+        "id" : 5,
+        "CatalogNameRu" : "Масла",
+        "CatalogNameUz" : "Yog'lar",
+        "CatalogNameEn" : "Oils",
+               "CatalogIcon" : "   https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/catalog1.svg?alt=media&token=67e9e9c4-8894-44f5-9437-a07644762f45",
+        "CatalogProducts":[
+            {
+                "id":1,
+                "ProductsName":"Бублик из бычьего корня",
+                "ProductPrice":495,
+                "ProductGram":100
+            }
+        ]
+    },
+    {
+        "id" : 5,
+        "CatalogNameRu" : "Игрушки",
+        "CatalogNameUz" : "O'yinchoqlar",
+        "CatalogNameEn" : "Toys",
+               "CatalogIcon" : "   https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/catalog1.svg?alt=media&token=67e9e9c4-8894-44f5-9437-a07644762f45",
+        "CatalogProducts":[
+            {
+                "id":1,
+                "ProductsName":"Бублик из бычьего корня",
+                "ProductPrice":495,
+                "ProductGram":100
+            }
+        ]
+    },
+    {
+        "id" : 6,
+        "CatalogNameRu" : "Говядина",
+        "CatalogNameUz" : "Mol go'shti",
+        "CatalogNameEn" : "Beef",
+               "CatalogIcon" : "   https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/catalog1.svg?alt=media&token=67e9e9c4-8894-44f5-9437-a07644762f45",
+        "CatalogProducts":[
+            {
+                "id":1,
+                "ProductsName":"Бублик из бычьего корня",
+                "ProductPrice":495,
+                "ProductGram":100
+            }
+        ]
+    }
+]

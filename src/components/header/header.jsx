@@ -2,6 +2,7 @@ import ModalSearch from "./modal-search/index"
 import MenuContent from "./menu-content"
 import ModalCommon from "../common/modal"
 import MediaFooter from "./media-footer"
+import MenuCatalog from "./menu-catalog"
 import SingIn from "./sign-in"
 import SingUp from "./sign-up"
 import UpdatePassword from "./update-password"
@@ -15,49 +16,34 @@ import LikeIcon from "./../../assets/images/header/like-icon.svg"
 import ProfileIcon from "./../../assets/images/header/profile-icon.svg"
 import cartIcon from "./../../assets/images/header/cart-icon.svg"
 import HamburgerMedia from "./../../assets/images/header/hamburger-media.svg"
-import UzFlagIcon from "./../../assets/images/header/uzbekistan-flag-icon.svg"
 import { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../../contexts/user.context"
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import Box from "@mui/material/Box";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 const Header =() => {
   const { t, i18n } = useTranslation();
   const handleLang = (e) =>{
     const lang = e.target.value
     i18n.changeLanguage(lang)
+    window.location.reload()
   }
-  const languages =[
-    {
-      code : "uz",
-      name : "uz",
-      country_code : "uz"
-    },
-    {
-      code : "en",
-      name : "en",
-      country_code : "en"
-    },
-    {
-      code : "ru",
-      name : "ru",
-      country_code : "ru"
 
-    },
-  ]
   const { currentUser} = useContext(UserContext)
   const[monster , monsterSet] = useState([])
   const[WordEnter , SetWordEnter] = useState([])
   const [monsterFilter , SetmonsterFilter] = useState([])
   const [activeModal , setActiveModal] = useState(0);
+  const [activeModal2 , setActiveModal2] = useState(0);
+
   const  MenuClickFixed= useRef();
   const ChangeModal = (activeModal) =>{
     setActiveModal(activeModal)
     setOpen(true);
     MenuClickFixed.current.style.left= "900px"
+  }
+  const ChangeModal2 = (activeModal) =>{
+    setActiveModal2(activeModal)
+    MenuClickFixed.current.style.left = "0px"
   }
   const  SearchCloseFunc= useRef();
   const  SearchFun= useRef();
@@ -96,9 +82,6 @@ const Header =() => {
         SearchCloseFunc.current.style.display ="none"
         SearchFun.current.style.display ="flex"
     }
-  const MenuClick = () =>{
-    MenuClickFixed.current.style.left = "0px"
-  }
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -115,48 +98,41 @@ const Header =() => {
     return(
         <>
     <MenuMedia  ref={MenuClickFixed}>
-     <MenuContent MenuClickFixed={MenuClickFixed} onClick={()=>ChangeModal(1)} />
+      {activeModal2 === 1?<MenuContent MenuClickFixed={MenuClickFixed} onClick2={()=>ChangeModal2(2)} onClick={()=>ChangeModal(1)}/>:activeModal2 === 2 ?(
+        <MenuCatalog onClick1={()=>ChangeModal2(1)}/>
+      ):null}
     </MenuMedia>
     <Wrapper>
         <WrapperContainer>
-        <ImgDesktop src={Logo} width={191} height={72} alt={Logo} />
+        <Link to="/"><ImgDesktop src={Logo} width={191} height={72} alt={Logo} /></Link>
         <ImgMedia src={LogoMedia} width={48} height={48} alt={Logo} />
         <SearchFunc >
         <Search placeholder={t('Header.0')} onChange={SearchChange} value={WordEnter} />
         <img className="search-Close" onClick={handleClear} ref={SearchCloseFunc} width={24} height={24} src={SearchClose}  alt={SearchClose}/>
         <img className="search" ref={SearchFun} width={24} height={24} src={SearchIcon}  alt={SearchIcon}/>
         </SearchFunc>
-        
         <ul>
-            <li> <LanWrapper>
-          <LanguageIcon style={{ left: "15px" }} />
-          <Box sx={{ minWidth: 40 }}>
-            <FormControl fullWidth style={{ border: "none" , }}>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label="Age"
-                onChange={handleLang}
-                style={{
-                  border: "none",
-                  borderRadius: "50px",
-                  background: "black",
-                  height: "48px",
-                  color: "black",
-                }}
-              >
-                <MenuItem style={{background : "black" , color : "white"}} value={"uz"}> UZ</MenuItem>
-                <MenuItem  style={{background : "black" , color : "white"}}  value={"ru"}> RU</MenuItem>
-                <MenuItem style={{background : "black" , color : "white"}}  value={"en"}>EN</MenuItem>
-              </Select>
-            </FormControl>
-          </Box>
-        </LanWrapper></li>
+        <li>
+                            <button onClick={handleLang} value="uz">
+                            Uz
+                            </button>
+                        </li>
+                        <li>
+                            <button onClick={handleLang}  value="ru">
+                            Ru
+                            </button>
+                        </li>
+                        <li>
+                            <button onClick={handleLang}  value="en">                       
+                            En</button>
+                        </li>
+        </ul>
+        <ul>
             <li><img width={24} height={24} src={LikeIcon} alt={LikeIcon} /></li>
             <li><img width={24} height={24} src={cartIcon} alt={cartIcon} /></li>
             {currentUser?(<li><NavLink to="/profile"><img width={24} height={24} src={ProfileIcon} alt={ProfileIcon}/></NavLink></li>):<li><img width={24} height={24} onClick={()=>ChangeModal(1)} src={ProfileIcon} alt={ProfileIcon}/></li>}
         </ul>
-        <HamburgerIcon onClick={MenuClick} src={HamburgerMedia} width={24} height={24} alt="" />
+        <HamburgerIcon onClick={() =>ChangeModal2(1)} src={HamburgerMedia} width={24} height={24} alt="" />
         </WrapperContainer>
         
     </Wrapper>
@@ -172,7 +148,7 @@ const Header =() => {
       ): activeModal === 3 ?(
       <      UpdatePassword handleClose={handleClose}/>
          ): activeModal === 4 ?(
-          <h1>qabul boldi</h1>
+          <h1>Qabul boldi</h1>
 ):null}
      </ModalCommon>)}
       <MediaFooter onClick={()=>ChangeModal(1)} />

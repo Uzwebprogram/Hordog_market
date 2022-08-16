@@ -10,10 +10,10 @@ i18next
 .init({
   resources:{
     en:{
-        translation: en
+        translation: en,
     },
     ru:{
-      translation:ru
+      translation:ru,
     },
     uz:{
       translation: uz

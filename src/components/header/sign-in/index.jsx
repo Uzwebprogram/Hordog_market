@@ -1,20 +1,20 @@
 import { useRef, useState , useContext } from "react"
-import { signWithGooglePopup , createUserDocumentFromtAuth, signInCreateAuthUserWithEmailAndPassword } from "../../../utils/firebase/firebase.utils"
+import { signWithGooglePopup , createUserDocumentFromtAuth, signInCreateAuthUserWithEmailAndPassword,  } from "../../../utils/firebase/firebase.utils"
 import Input from "../../common/inputs"
 import Button from "../../common/buttons/buttons"
 import IconsEye from "./../../../assets/images/header/icons-eye.png"
 import IconsEyeIcons from "./../../../assets/images/header/icons-eye-close.png"
 import { Wrapper , WrapperTop  ,UpdatePass ,Buttons , ErrorIcon , Inputs} from "./styled-index"
 import { UserContext } from "../../../contexts/user.context"
+import { useTranslation } from 'react-i18next';
 const defaultFormFields = {
     email :"",
     password :"",
 }
 const SingIn = ({handleClose , onClick , onClick2}) =>{
-    const {setCurrentUser} = useContext(UserContext)
+  const { t, i18n } = useTranslation();
     const logGoogleUser = async () =>{
-        const {user} = await signWithGooglePopup();
-        const userDocRef = await createUserDocumentFromtAuth(user)
+        await signWithGooglePopup();
     }
     const [formFields , setFormFields] = useState(defaultFormFields);
     const PasswordError = useRef()
@@ -30,10 +30,8 @@ const SingIn = ({handleClose , onClick , onClick2}) =>{
         event.preventDefault();
         try{
             const {user} = await signInCreateAuthUserWithEmailAndPassword(email, password)
-            setCurrentUser(user);
             resetFormFields();  
             setErrorText(false);
-            
             PasswordError.current.style.border = "1px solid #CFD8DC"
             PasswordError.current.style.background = "white"
         }catch(error){
@@ -68,16 +66,16 @@ const SingIn = ({handleClose , onClick , onClick2}) =>{
         <Wrapper onSubmit={HandleSubmit}>
             <WrapperTop>
                 <span onClick={handleClose}>&times;</span>
-                <h2>Вход</h2>
-                <Input ErrorRef={EmailError} onChange={HandleChange} name="email" placeholder="Email" value={email} type="email" marginBottom="8px"/>
-                <Input ErrorRef={PasswordError} onChange={HandleChange} name="password" placeholder="Пароль" value={password} type="password" marginBottom="10px"/>
+                <h2>{t("Sign-up.0")}</h2>
+                <Input ErrorRef={EmailError} onChange={HandleChange} name="email" placeholder={t("Sign-up.1")} value={email} type="email" marginBottom="8px"/>
+                <Input ErrorRef={PasswordError} onChange={HandleChange} name="password" placeholder={t("Sign-up.2")}  value={password} type="password" marginBottom="10px"/>
                 {!Eye&&<ErrorIcon onClick={handleIcon} ref={IconError} src={IconsEye} width={24} height={24} alt={IconsEye}/>}
                 {Eye &&<ErrorIcon onClick={handleIcon2} ref={IconError} src={IconsEyeIcons} width={24} height={24} alt={IconsEye}/>}            
                 </WrapperTop>
             <Buttons>
-            <UpdatePass onClick={onClick2}>Восстановить пароль</UpdatePass>
-            <Button border="1px solid #CFD8DC" type="submit" bg="#FED700" marginBottom="8px" title={<h4>Войти</h4>}/>
-            <Button border="1px solid #CFD8DC" type="button" onClick={onClick} marginBottom="8px" title={<h5>Регистрация</h5>}/>
+            <UpdatePass onClick={onClick2}>{t("Sign-up.3")}</UpdatePass>
+            <Button border="1px solid #CFD8DC" type="submit" bg="#FED700"   pd=" 14px 0px" marginBottom="8px" title={t("Sign-up.4")}/>
+            <Button border="1px solid #CFD8DC" type="button" onClick={onClick}  pd=" 14px 0px" marginBottom="8px" title={t("Sign-up.5")}/>
             <Button border="1px solid #CFD8DC" type="button" marginBottom="8px" onClick={logGoogleUser} title={<p>Google</p>}/>
             </Buttons>
         </Wrapper>

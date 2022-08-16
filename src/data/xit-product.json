@@ -1,0 +1,79 @@
+[
+    {
+        "id" : 1,
+        "ProductNameRu" : "Рога оленя для собак весом от 10 до 30 кг. Размер L",
+        "priceRu" : 840,
+        "aksiya_priceRu" :"1200 ₽",
+        "ProductNameUz" : "Og'irligi 10 dan 30 kg gacha bo'lgan itlar uchun kiyik shoxlari. L o'lchami",
+        "priceUz" : 120,
+        "aksiya_priceUz" :"180 ming so'm",
+        "ProductNameEn" : "Deer antlers for dogs weighing 10 to 30 kg. L size",
+        "priceEn" : 12,
+        "aksiya_priceEn" :" 17$",
+        "ProductImage" : "https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/homeCard.png?alt=media&token=f147886f-c89d-4243-8b5f-5f74f9c92f22",
+        "ProductSkidka":"-30%"
+    },
+    {
+        "id" : 2,
+        "ProductNameRu" : "Рога оленя для собак весом от 10 до 30 кг. Размер L",
+        "priceRu" : 840,
+        "ProductNameUz" : "Og'irligi 10 dan 30 kg gacha bo'lgan itlar uchun kiyik shoxlari. L o'lchami",
+        "priceUz" : 120,
+        "ProductNameEn" : "Deer antlers for dogs weighing 10 to 30 kg. L size",
+        "priceEn" : 12,
+        "ProductImage" : "https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/HomeSpire.png?alt=media&token=aa4f33d9-0b64-47cc-9ed6-14fad7059eb8",
+        "ProductNewsUz" : "Yangiliklar",
+        "ProductNewsEn" : "News",
+        "ProductNewsRu" : "Новинка"
+    },
+    {
+        "id" : 3,
+        "ProductNameRu" : "Рога оленя для собак весом от 10 до 30 кг. Размер L",
+        "priceRu" : 1000,
+        "aksiya_priceRu" :"1200 ₽",
+        "ProductNameUz" : "Og'irligi 10 dan 30 kg gacha bo'lgan itlar uchun kiyik shoxlari. L o'lchami",
+        "priceUz" : 160,
+        "aksiya_priceUz" :"180 ming so'm",
+        "ProductNameEn" : "Deer antlers for dogs weighing 10 to 30 kg. L size",
+        "priceEn" : 16,
+        "aksiya_priceEn" :"17$",
+        "ProductImage" : "https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/homeCard.png?alt=media&token=f147886f-c89d-4243-8b5f-5f74f9c92f22",
+        "ProductSkidka":"-10%"
+    },
+    {
+        "id" : 4,
+        "ProductNameRu" : "Рога оленя для собак весом от 10 до 30 кг. Размер L",
+        "priceRu" : 840,
+        "ProductNameUz" : "Og'irligi 10 dan 30 kg gacha bo'lgan itlar uchun kiyik shoxlari. L o'lchami",
+        "priceUz" : 120,
+        "ProductNameEn" : "Deer antlers for dogs weighing 10 to 30 kg. L size",
+        "priceEn" : 12,
+        "ProductImage" : "https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/HomeSpire.png?alt=media&token=aa4f33d9-0b64-47cc-9ed6-14fad7059eb8",
+        "ProductNewsUz" : "Yangiliklar",
+        "ProductNewsEn" : "News",
+        "ProductNewsRu" : "Новинка"
+    },
+    {
+        "id" : 5,
+        "ProductNameRu" : "Рога оленя для собак весом от 10 до 30 кг. Размер L",
+        "priceRu" : 840,
+        "ProductNameUz" : "Og'irligi 10 dan 30 kg gacha bo'lgan itlar uchun kiyik shoxlari. L o'lchami",
+        "priceUz" : 120,
+        "ProductNameEn" : "Deer antlers for dogs weighing 10 to 30 kg. L size",
+        "priceEn" : 12,
+        "ProductImage" : "https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/homeCard.png?alt=media&token=f147886f-c89d-4243-8b5f-5f74f9c92f22"
+    },
+    {
+        "id" : 6,
+        "ProductNameRu" : "Рога оленя для собак весом от 10 до 30 кг. Размер L",
+        "priceRu" : 840,
+        "ProductNameUz" : "Og'irligi 10 dan 30 kg gacha bo'lgan itlar uchun kiyik shoxlari. L o'lchami",
+        "priceUz" : 120,
+        "ProductNameEn" : "Deer antlers for dogs weighing 10 to 30 kg. L size",
+        "priceEn" : 12,
+        "ProductImage" : "https://firebasestorage.googleapis.com/v0/b/telegrambot-2ae36.appspot.com/o/HomeSpire.png?alt=media&token=aa4f33d9-0b64-47cc-9ed6-14fad7059eb8",
+        "ProductNewsUz" : "Yangiliklar",
+        "ProductNewsEn" : "News",
+        "ProductNewsRu" : "Новинка"
+    }
+]

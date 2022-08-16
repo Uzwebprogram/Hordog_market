@@ -6,10 +6,11 @@ export const Wrapper = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: -160px;
-    height: 624px;
+    height: 644px;
     padding-top: 160px;
+    margin-bottom: 20px;
     @media only screen and (max-width: 560px) {
-        height: 774px;
+        height: 841px;
     }
 `
 export const WrapperHero = styled.div`
@@ -25,7 +26,6 @@ export const ImageDogs = styled.img`
     width: 100%;
     @media only screen and (max-width: 560px) {
         margin-top: -80px;
-
     }
 `
 export const WrapperContainer = styled.div`
@@ -139,5 +139,60 @@ export const WrapperHeroLeft = styled.div`
     }
     @media only screen and (max-width: 560px) {
         width: 100%;
+        h1{
+        margin: 0;
+        padding: 0;
+        font-size: 36px;
+        line-height: 42px;
+        color: #1A1A1A;
+    }
     }
 ` 
+export const WrapperHeroBottom = styled.div`
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    box-shadow: 0px 2px 4px rgba(40, 41, 61, 0.04), 0px 8px 16px rgba(96, 97, 112, 0.16);
+    border-radius: 20px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    span{
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        color: #1A1A1A;
+        
+    }
+    @media only screen and (max-width: 1189px){
+        margin-top: 0px;
+}
+@media only screen and (max-width: 320px){
+    span{
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        color: #1A1A1A;
+        
+    }
+}
+@media only screen and (max-width: 553px){
+        margin-top: 0px;
+}
+`
+export const WrapperHeroBottomCatalog = styled.div`
+width: 9%;
+display: flex;
+flex-direction: column;
+align-items: center;
+@media only screen and (max-width: 768px){
+    width: 33%;
+    margin-bottom: 24px;
+}
+`

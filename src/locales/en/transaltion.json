@@ -24,5 +24,34 @@
         "2":"basket",
         "3":"favorites",
         "4":"Profile"
+    },
+    "Sign-up":{
+        "0" : "Entrance",
+        "1" : "Email",
+        "2" : "Password",
+        "3" : "Restore password",
+        "4" : "sign In",
+        "5" : "Register",
+        "6" : "Registration",
+        "7" : "Display name",
+        "9" : "By registering on the site, you agree to our Rules and Privacy Policy and agree to receive newsletters.",
+        "10" : "Confirm password",
+        "13" : "Password recovery",
+        "14" : "To receive a temporary password, you must enter the email address you provided during registration.",
+        "15" : "The temporary password is valid for 24 hours.",
+        "16" : "poison",
+        "17" : "Unable to create user, email already in use"
+    },
+    "Not-Found":{
+        "0":"You look lost",
+        "1":"The page you are looking for is not available"
+    },
+    "Home-Hero":{
+        "0":"Food and toys for dogs",
+        "1":"Always fresh handmade delicacies with delivery throughout Uzbekistan and the World",
+        "2":"Catalog"
+    },
+    "Home-button-cart":{
+        "0":"Add to cart"
     }
 }

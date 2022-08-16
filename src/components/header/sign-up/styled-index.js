@@ -75,36 +75,4 @@ export const Buttons = styled.div`
             right: 5px;
         }
     }
-    h5{
-        margin: 0;
-        padding: 0;
-        font-family: 'Nunito';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 20px;
-        color: #1A1A1A;
-        border-radius: 87px;
-        padding-top: 14px;
-        padding-bottom: 14px;
-        display: flex;
-        align-items: center;
-        padding-left: 116px;
-    }
-    h4{
-        margin: 0;
-        padding: 0;
-        font-family: 'Nunito';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 20px;
-        color: #1A1A1A;
-        border-radius: 87px;
-        padding-top: 14px;
-        padding-bottom: 14px;
-        display: flex;
-        align-items: center;
-        padding-left: 93px;
-    }
 `

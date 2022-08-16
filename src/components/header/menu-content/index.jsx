@@ -1,19 +1,23 @@
-import { Wrapper ,WrapperTop , WrapperContent , MenuFooter } from "./styled-index";
+import { Wrapper ,WrapperTop , WrapperContent , MenuFooter , MenuFooterFlex } from "./styled-index";
 import CloseHamburger from "./../../../assets/images/header/close-hamburger.svg"
-import ConntentMenu1 from "./../../../assets/images/header/content-menu1.svg"
-import ConntentMenu2 from "./../../../assets/images/header/content-menu2.svg"
-import ConntentMenu3 from "./../../../assets/images/header/content-menu3.svg"
-import ConntentMenu4 from "./../../../assets/images/header/content-menu4.svg"
-import ConntentMenu5 from "./../../../assets/images/header/content-menu5.svg"
-import iconStrelkaRight from "./../../../assets/images/header/icon-strelka-left.svg"
+
+import UzFlag from "../../../assets/images/header/uzbekistan-flag-icon.svg"
+import RuFlag from "../../../assets/images/header/russian-flag.png"
+import EnFlag from "../../../assets/images/header/england-flag.png"
 import AdminIcon from "./../../../assets/images/header/admin-icon.svg"
 import {useTranslation} from "react-i18next"
 import { useContext } from "react";
 import { UserContext } from "../../../contexts/user.context";
 import {signOutUser} from "./../../../utils/firebase/firebase.utils"
 import {useNavigate} from "react-router-dom"
-const MenuContent = ({MenuClickFixed , onClick}) =>{
+import MenuContentItem from "./menu-Content-item";
+const MenuContent = ({MenuClickFixed , onClick , onClick2}) =>{
     const { t, i18n } = useTranslation();
+    const handleLang = (e) =>{
+        const lang = e.target.value
+        i18n.changeLanguage(lang)
+        window.location.reload()
+      }
     const {currentUser , setCurrentUser} = useContext(UserContext)
     const MenuClose = () =>{
         MenuClickFixed.current.style.left= "900px"
@@ -24,13 +28,7 @@ const MenuContent = ({MenuClickFixed , onClick}) =>{
           setCurrentUser(null)
           history('/')
         }
-    const dataMenu = [
-        {id : 1, iconLeft : `${ConntentMenu1}` , title :t("Header-media-menu.0") , iconRight : `${iconStrelkaRight}`},
-        {id : 2, iconLeft : `${ConntentMenu2}` , title :t("Header-media-menu.1") , iconRight : `${iconStrelkaRight}`},
-        {id : 3, iconLeft : `${ConntentMenu3}` , title :t("Header-media-menu.2"), iconRight : `${iconStrelkaRight}`},
-        {id : 4, iconLeft : `${ConntentMenu4}` , title :t("Header-media-menu.3"), iconRight : `${iconStrelkaRight}`},
-        {id : 5, iconLeft : `${ConntentMenu5}` , title :t("Header-media-menu.4"), iconRight : `${iconStrelkaRight}`},
-    ]
+
     return(
         <Wrapper>
             <WrapperTop>
@@ -38,17 +36,7 @@ const MenuContent = ({MenuClickFixed , onClick}) =>{
             
             {currentUser?(<span  onClick={HandleUserOut}>{t("Header-media-menu.13")}</span>):(<span onClick={onClick}>{t("Header-media-menu.12")}</span>)}
             </WrapperTop>
-            <WrapperContent>
-                {dataMenu.map((elem) =><>
-                    <li key={elem.id}>
-                    <div>
-                    <img src={elem.iconLeft} alt={elem.iconLeft} width={24} height={24} />
-                    <span>{elem.title}</span>
-                    </div>
-                    <img src={iconStrelkaRight} width={8} height={14} alt="" />
-                    </li>
-                </>)}
-            </WrapperContent>
+            <MenuContentItem onClick3={onClick2}/>
             <WrapperContent>
                 <li>{t("Header-media-menu.5")}</li>
                 <li>{t("Header-media-menu.6")}</li>
@@ -56,12 +44,36 @@ const MenuContent = ({MenuClickFixed , onClick}) =>{
                 <li>{t("Header-media-menu.8")}</li>
             </WrapperContent>
             <MenuFooter>
+                    <ul>
+                        <li>
+                            <button onClick={handleLang} value="uz">
+                            <img src={UzFlag} width={24} height={24} style={{marginRight:"5px"}} alt="" />
+                            Uz
+                            </button>
+                        </li>
+                        <hr />
+                        <li>
+                            <button onClick={handleLang}  value="ru">
+                            <img src={RuFlag} width={24} height={24} style={{marginRight:"5px"}} alt="" />
+                            Ru
+                            </button>
+                        </li>
+                        <hr />
+                        <li>
+                            <button onClick={handleLang}  value="en">                       
+                                <img src={EnFlag} width={24} height={24} style={{marginRight:"5px"}} alt="" />
+                            En</button>
+                        </li>
+                    </ul>
+                    <MenuFooterFlex>
                     <img src={AdminIcon} width={32} height={32} alt={AdminIcon} />
                     <div>
                         <p>{t("Header-media-menu.9")}</p>
                         <span>{t("Header-media-menu.10")}</span>
                         <button>{t("Header-media-menu.11")}</button>
                     </div>
+                    </MenuFooterFlex>
+ 
             </MenuFooter>
         </Wrapper>
     )

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     text-align: center;
+    margin-bottom: 53px;
     h1{
         margin: 0;
         padding: 0;
@@ -11,7 +12,7 @@ export const Wrapper = styled.div`
         font-size: 40px;
         line-height: 46px;
         color: #1A1A1A;
-        margin-top: 50px;
+        margin-top: 30px;
     }
     h3{
     margin: 0;

@@ -24,5 +24,34 @@
         "2":"Savat",
         "3":"Sevimlilar",
         "4":"Shaxsiy Bo'lim"
+    },
+    "Sign-up":{
+        "0" : "Kirish",
+        "1" : "Email",
+        "2" : "Maxfiy raqam",
+        "3" : "Maxfiy raqamni tiklash",
+        "4" : "Kirish uchun",
+        "5" : "Ro‘yxatdan o‘ting",
+        "6" : "Roʻyxatdan oʻtish",
+        "7" : "Ismni ko'rsatish",
+        "9" : "Saytda ro'yxatdan o'tish orqali siz Qoidalar va Maxfiylik siyosatimizga rozilik bildirasiz va axborot byulletenlarini olishga rozilik bildirasiz.",
+        "10" : "Maxfiy raqamni tasdiqlang",
+        "13" : "Maxfiy raqamni tiklash",
+        "14" : "Vaqtinchalik parolni olish uchun siz ro'yxatdan o'tish paytida ko'rsatgan elektron pochta manzilingizni kiritishingiz kerak.",
+        "15" : "Vaqtinchalik parol 24 soat davomida amal qiladi.",
+        "16" : "Yuborish",
+        "17" : "Foydalanuvchi yaratib bo‘lmadi, email allaqachon ishlatilmoqda"
+    },
+    "Not-Found":{
+        "0":"Adashganga o'xshaysiz",
+        "1": "Siz qidirayotgan sahifa mavjud emas"
+    },
+    "Home-Hero":{
+        "0":"Kuchuklar uchun oziq-ovqat va o'yinchoqlar",
+        "1":"O'zbekiston va butun dunyo bo'ylab yetkazib berish bilan har doim yangi qo'lda tayyorlangan delikates",
+        "2":"Katalog"
+    },
+    "Home-button-cart":{
+        "0":"Savatchaga qo'shish"
     }
 }

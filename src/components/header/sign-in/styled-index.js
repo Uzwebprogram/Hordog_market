@@ -2,6 +2,12 @@ import styled from "styled-components";
 import GoogleIcons from "./../../../assets/images/home/google-icons.svg"
 export const Wrapper = styled.form`
     padding: 16px;
+    @media only screen and (max-width:768px) {
+        button:nth-child(4){
+            display: none;
+}
+    }
+
 `
 export const WrapperTop = styled.div`
         display: flex;
@@ -84,7 +90,7 @@ export const Buttons = styled.div`
         padding-bottom: 14px;
         display: flex;
         align-items: center;
-        padding-left: 93px;
+        padding-left: 68px;
     }
     h4{
         margin: 0;
@@ -100,7 +106,7 @@ export const Buttons = styled.div`
         padding-bottom: 14px;
         display: flex;
         align-items: center;
-        padding-left: 116px;
+        padding-left: 95px;
     }
 `
 export const ErrorIcon = styled.img`
@@ -108,4 +114,9 @@ position: absolute;
 right: 25px;
 bottom: 265px;
 cursor: pointer;
+@media only screen and (max-width:768px) {
+    position: absolute;
+right: 25px;
+bottom: 196px;
+    }
 `

@@ -1,10 +1,16 @@
 import styled from "styled-components";
+import UzFlag from "./../../assets/images/header/uzbekistan-flag-icon.svg"
+import RuFlag from "./../../assets/images/header/russian-flag.png"
+import EnFlag from "./../../assets/images/header/england-flag.png"
 
 export const Wrapper =styled.div`
     width: 100%;
     z-index: 10000;
     margin: 0 auto;
     background-color: #FED700;
+   ul li button{
+        cursor: pointer;
+    }
 
 `
 export const WrapperContainer = styled.div`
@@ -14,17 +20,63 @@ export const WrapperContainer = styled.div`
     display: flex;
     justify-content: space-between;
     ul{
-        width: 197px;
+        margin: 0;
+        padding: 0;
+        width: 137px;
         display: flex;
         justify-content: space-between;
         list-style-type: none;       
         align-items: center;
     }
+    li{
+    button{
+        font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            color: black;
+            background-color: transparent;
+            border: transparent;
+        }
+   }
+    li:nth-child(1) button::before{
+        content: "";
+        display: block;
+        background-image: url(${UzFlag});
+        width: 24px;
+        height: 18px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        right: 3px;
+    }
+    li:nth-child(2) button::before{
+        content: "";
+        display: block;
+        background-image: url(${RuFlag});
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        right: 3px;
+    }
+    li:nth-child(3) button::before{
+        content: "";
+        display: block;
+        background-image: url(${EnFlag});
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        right: 3px;
+    }
     ul li{
         cursor: pointer;
-   .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
-    background-color: red !important;
-  }
     }
     @media only screen and (max-width: 768px) {
      width: 90%;

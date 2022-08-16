@@ -7,9 +7,9 @@ export const Buttons = styled.button`
     cursor: pointer;
     font-family: 'Nunito';
     font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 24px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
     color: #1A1A1A;
     img{
      margin-left: 8px ;
