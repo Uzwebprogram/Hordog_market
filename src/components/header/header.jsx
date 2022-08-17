@@ -5,6 +5,7 @@ import MediaFooter from "./media-footer"
 import MenuCatalog from "./menu-catalog"
 import SingIn from "./sign-in"
 import SingUp from "./sign-up"
+import HeaderIcon from "./header-icon"
 import UpdatePassword from "./update-password"
 import {Wrapper , WrapperContainer  ,SearchFunc ,Search ,Overlay , HamburgerIcon , ImgMedia , ImgDesktop , MenuMedia, LanWrapper } from "./styled-header"
 import LanguageIcon from "@mui/icons-material/Language";
@@ -20,8 +21,10 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../../contexts/user.context"
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { CartContext } from "../../contexts/like-product.context"
 const Header =() => {
   const { t, i18n } = useTranslation();
+  const {cartCount} = useContext(CartContext)
   const handleLang = (e) =>{
     const lang = e.target.value
     i18n.changeLanguage(lang)
@@ -128,8 +131,8 @@ const Header =() => {
                         </li>
         </ul>
         <ul>
-            <li><img width={24} height={24} src={LikeIcon} alt={LikeIcon} /></li>
-            <li><img width={24} height={24} src={cartIcon} alt={cartIcon} /></li>
+            <li><NavLink to="/favorites"><HeaderIcon Image={LikeIcon} count={cartCount}/></NavLink></li>
+            <li><HeaderIcon Image={cartIcon} count={0}/></li>
             {currentUser?(<li><NavLink to="/profile"><img width={24} height={24} src={ProfileIcon} alt={ProfileIcon}/></NavLink></li>):<li><img width={24} height={24} onClick={()=>ChangeModal(1)} src={ProfileIcon} alt={ProfileIcon}/></li>}
         </ul>
         <HamburgerIcon onClick={() =>ChangeModal2(1)} src={HamburgerMedia} width={24} height={24} alt="" />

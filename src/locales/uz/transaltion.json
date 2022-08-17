@@ -53,5 +53,10 @@
     },
     "Home-button-cart":{
         "0":"Savatchaga qo'shish"
+    } ,
+        "Favorites":{
+        "0":"Sizning sevimli mahsulotingiz yo'q",
+        "1":"Sevimli mahsulotingizni tanlang",
+        "2":"Bosh sahifaga yoki mahsulotlarga o'ting va mahsulotingizni tanlang !"
     }
 }

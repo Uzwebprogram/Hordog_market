@@ -53,5 +53,10 @@
     },
     "Home-button-cart":{
         "0":"Add to cart"
+    },
+    "Favorites":{
+        "0":"You don't have a favorite product",
+        "1":"Choose your favorite product",
+        "2":"Go to homepage or products and choose your product!"
     }
 }
