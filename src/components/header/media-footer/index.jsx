@@ -9,9 +9,11 @@ import { useContext } from "react"
 import {UserContext} from "./../../../contexts/user.context"
 import HeaderIcon from "../header-icon"
 import {Link , NavLink} from "react-router-dom"
+import { CartContext } from "../../../contexts/like-product.context"
 const MediaFooter = ( {onClick})=>{
   const {t, i18} = useTranslation();
   const { currentUser} = useContext(UserContext)
+  const {cartCount} = useContext(CartContext)
     return(
         <Wrapper>
  <NavLink_Footer >
@@ -31,7 +33,7 @@ const MediaFooter = ( {onClick})=>{
   </NavLink_Footer>
   <NavLink_Footer>
     <NavLink to="/favorites">
-      <HeaderIcon Image={Favorites} count={0}/>
+      <HeaderIcon Image={Favorites} count={cartCount}/>
       </NavLink>
     <span>{t("Media-Footer.3")}</span>
   </NavLink_Footer>

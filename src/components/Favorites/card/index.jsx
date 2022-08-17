@@ -8,8 +8,9 @@ import { CartContext } from "../../../contexts/like-product.context"
 
 
 const FavoritesCard = ({products}) =>{
+    const {removeItemToCart} = useContext(CartContext)
     const {t , i18} = useTranslation();
-    const {ProductSkidka,  ProductNewsUz, ProductNameUz, aksiya_priceUz ,  priceUz ,ProductNewsRu, ProductNameRu, aksiya_priceRu ,  priceRu  , ProductNewsEn, ProductNameEn, aksiya_priceEn ,  priceEn, ProductImage , PriceMuchRu, PriceMuchUz,PriceMuchEn,  id} = products;
+    const {ProductSkidka,  ProductNewsUz, ProductNameUz, aksiya_priceUz ,  priceUz ,ProductNewsRu, ProductNameRu, aksiya_priceRu ,  priceRu  , ProductNewsEn, ProductNameEn, aksiya_priceEn ,  priceEn, ProductImage , PriceMuchRu, PriceMuchUz,PriceMuchEn,  keys} = products;
 
     function getValue() {
         return localStorage.getItem('i18nextLng');  
@@ -18,10 +19,10 @@ const FavoritesCard = ({products}) =>{
     return(
         <>
         {getValue()==='uz'?                
-        <Card key={id}>
+        <Card key={keys}>
             <CardTop>
             {ProductSkidka ? <span>{ProductSkidka}</span>: ProductNewsUz ? <News>{ProductNewsUz}</News>:null}
-            <img src={RemoveIcon} style={{cursor:"pointer"}}  width={24} height={24} alt="Like Icon" />
+            <img src={RemoveIcon} onClick={()=>removeItemToCart(products)} style={{cursor:"pointer"}}  width={24} height={24} alt="Like Icon" />
             </CardTop>
             <img src={ProductImage} width={206} height={187} alt="Card Img" />
             {aksiya_priceUz ?<span>{aksiya_priceUz}</span> :<span style={{color:"white"}}>;;</span>}
@@ -31,10 +32,10 @@ const FavoritesCard = ({products}) =>{
             <Button  title={t("Home-button-cart.0")}  bg="#FED700" pd="10px 18px"/>
         </Card>
         :getValue()==='ru'?
-        <Card key={id}>
+        <Card key={keys}>
             <CardTop>
             {ProductSkidka ? <span>{ProductSkidka}</span>: ProductNewsRu ? <News>{ProductNewsRu}</News>:null}
-            <img src={RemoveIcon}  width={24} height={24} alt="Like Icon" />
+            <img src={RemoveIcon} onClick={()=>removeItemToCart(products)} style={{cursor:"pointer"}}  width={24} height={24} alt="Like Icon" />
             </CardTop>
             <img src={ProductImage} width={206} height={187} alt="Card Img" />
             {aksiya_priceRu ?<span>{aksiya_priceRu}</span> :<span style={{color:"white"}}>.</span>}
@@ -44,10 +45,10 @@ const FavoritesCard = ({products}) =>{
             <Button   title={t("Home-button-cart.0")}  bg="#FED700" pd="10px 18px"/>
     </Card>
         :getValue()==='en'?
-        <Card key={id}>
+        <Card key={keys}>
             <CardTop>
             {ProductSkidka ? <span>{ProductSkidka}</span>: ProductNewsEn ? <News>{ProductNewsEn}</News>:null}
-            <img src={RemoveIcon}  width={24} height={24} alt="Like Icon" />
+            <img src={RemoveIcon} onClick={()=>removeItemToCart(products)} style={{cursor:"pointer"}}  width={24} height={24} alt="Like Icon" />
             </CardTop>
             <img src={ProductImage} width={206} height={187} alt="Card Img" />
             {aksiya_priceEn ?<span>{aksiya_priceEn}</span> :<span style={{color:"white"}}>.</span>}

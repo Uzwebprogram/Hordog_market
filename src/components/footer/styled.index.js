@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
     background: #FED700;
     margin: 0;
     padding: 0;
-    margin-bottom: 20px;
     ul{
         width: 80%;
         margin: 0 auto;
@@ -84,6 +83,7 @@ export const Wrapper = styled.div`
         }
     }
     @media only screen and (max-width: 768px) {
+    margin-bottom: 20px;
         ul{
             display: flex;
             flex-direction: column;

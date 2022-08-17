@@ -6,6 +6,7 @@ display: flex;
 flex-direction: column;
 width: 216px;
 align-items: flex-start;
+margin-bottom: 20px;
 @media only screen and (max-width: 768px) {
     width: 60%;
     margin: 0 auto;
